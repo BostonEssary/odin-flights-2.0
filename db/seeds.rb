@@ -17,19 +17,19 @@ jfk = Airport.create!({code: "JFK"})
 phx = Airport.create!({code: "PHX"})
 
 Flight.create!([{
-    takeoff: Time.new(2024, 9, 13, 12, 12),
+    takeoff: Time.new(2024, 9, 13),
     departure_airport: lax,
     arrival_airport: atl,
     flight_time: 3
 },
 {
-    takeoff: Time.new(2024, 12, 15, 7, 12),
+    takeoff: Time.new(2024, 12, 15),
     departure_airport: phx,
     arrival_airport: jfk,
     flight_time: 7
 },
 {
-    takeoff: Time.new(2024, 6, 23, 9, 30),
+    takeoff: Time.new(2024, 6, 23),
     departure_airport: jfk,
     arrival_airport: atl,
     flight_time: 4

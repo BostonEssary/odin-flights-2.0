@@ -9,6 +9,6 @@
     <%= form.number_field :passengers, in: 1..4, step: 1%>
     <br>
     <%= form.label :takeoff, "Takeoff Date"%>
-    <%= form.collection_select :takeoff, Flight.all(), :takeoff, :takeoff_formatted%>
+    <%= form.date_select :takeoff%>
     <%= form.submit "Search"%>
 <% end %>

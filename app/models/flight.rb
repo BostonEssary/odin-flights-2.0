@@ -6,9 +6,10 @@ class Flight < ApplicationRecord
     takeoff.strftime("%m/%d/%Y")
   end
 
-  def self.search(departure_airport, arrival_airport, takeoff)
-
-    where("departure_airport_id = ? AND arrival_airport_id = ? AND takeoff = ?", departure_airport, arrival_airport, takeoff)
-
+  def self.search(departure_airport, arrival_airport, year, month, date)
+    if year != nil
+      date = Time.new(year, month, date)
+    end
+    where("departure_airport_id = ? AND arrival_airport_id = ? AND takeoff = ?", departure_airport, arrival_airport, date)
   end
 end
