@@ -1,6 +1,9 @@
 <h1>Flights#index</h1>
 <p>Find me in app/views/flights/index.html.erb</p>
 <%= render "search_form"%>
-<% @flights.each do |flight| %>
-    <%= flight.id%>
+
+<%= form_with url: "/bookings" do |form|%>
+    <%= form.collection_radio_buttons :flight_id, @flights, :id, :display_info  do |b|
+        b.radio_button + b.label(class: "flight-label")
+    end %>
 <% end %>
